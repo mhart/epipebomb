@@ -28,7 +28,7 @@ require('epipebomb')
 for (var i = 0; i < 100; i++) console.log(i)
 ```
 
-#### Oh the joy
+#### Oh the joy!
 ```shell
 $ node example.js | head -1
 0
