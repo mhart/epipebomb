@@ -1,6 +1,10 @@
 # EPIPE Bomb
 
-Destroy EPIPE errors when stdout runs through a truncated pipe.
+By default, node throws `EPIPE` errors if `process.stdout` is being written to and
+a user runs it through a pipe that gets closed while the process is still outputting
+(eg, the simple case of piping a node app through `head`).
+
+This seemed a little overzealous to me, so I wrote this to suppress such errors.
 
 ## Before
 
