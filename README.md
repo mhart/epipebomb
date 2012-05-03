@@ -1,3 +1,7 @@
+# EPIPE Bomb
+
+Destroy EPIPE errors when stdout runs through a truncated pipe.
+
 ## Before
 
 #### example.js
