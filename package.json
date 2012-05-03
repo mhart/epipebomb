@@ -1,0 +1,11 @@
+{
+  "author": "Michael Hart",
+  "name": "epipebomb",
+  "description": "Destroy EPIPE errors when stdout runs through a truncated pipe",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mhart/epipebomb",
+  "repository": {
+    "url": "git://github.com/mhart/epipebomb.git"
+  },
+  "main": "epipebomb.js"
+}
