@@ -31,7 +31,7 @@ Error: write EPIPE
 
 #### example.js
 ```javascript
-require('epipebomb')
+require('epipebomb')()
 
 for (var i = 0; i < 100; i++) console.log(i)
 ```
