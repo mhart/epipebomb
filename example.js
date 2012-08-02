@@ -1,5 +1,8 @@
 // Without this line, you'll get an EPIPE error on:
-// 'node example.js | head -1'
+// 'node example.js | head'
 require('./epipebomb.js')()
 
-for (var i = 0; i < 100; i++) console.log(i)
+;(function log() {
+  console.log('tick')
+  process.nextTick(log)
+})()

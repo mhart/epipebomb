@@ -10,21 +10,33 @@ This seemed a little overzealous to me, so I wrote this to suppress such errors.
 
 #### example.js
 ```javascript
-for (var i = 0; i < 100; i++) console.log(i)
+;(function log() {
+  console.log('tick')
+  process.nextTick(log)
+})()
 ```
 
 #### Oh the humanity
 
 ```shell
-$ node example.js | head -1
-0
+$ node example.js | head
+tick
+tick
+tick
+tick
+tick
+tick
+tick
+tick
+tick
+tick
 
-node.js:201
-        throw e; // process.nextTick error, or 'error' event on first tick
-              ^
+events.js:66
+        throw arguments[1]; // Unhandled 'error' event
+                       ^
 Error: write EPIPE
-    at errnoException (net.js:670:11)
-    at Object.afterWrite [as oncomplete] (net.js:503:19)
+    at errnoException (net.js:782:11)
+    at Object.afterWrite (net.js:600:19)
 ```
 
 ## After
@@ -33,13 +45,25 @@ Error: write EPIPE
 ```javascript
 require('epipebomb')()
 
-for (var i = 0; i < 100; i++) console.log(i)
+;(function log() {
+  console.log('tick')
+  process.nextTick(log)
+})()
 ```
 
 #### Oh the joy!
 ```shell
-$ node example.js | head -1
-0
+$ node example.js | head
+tick
+tick
+tick
+tick
+tick
+tick
+tick
+tick
+tick
+tick
 ```
 
 ## Notes
