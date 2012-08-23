@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/mhart/epipebomb.png)](http://travis-ci.org/mhart/epipebomb)
 # EPIPE Bomb
 
 By default, node throws `EPIPE` errors if `process.stdout` is being written to and
