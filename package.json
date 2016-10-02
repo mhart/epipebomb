@@ -7,5 +7,13 @@
   "repository": {
     "url": "git://github.com/mhart/epipebomb.git"
   },
-  "main": "epipebomb.js"
+  "main": "epipebomb.js",
+  "scripts": {
+    "test": "tape 'test/**/*.test.js'"
+  },
+  "devDependencies": {
+    "pty.js": "^0.3.1",
+    "tape": "^4.6.2",
+    "underscore.string": "^3.3.4"
+  }
 }

@@ -66,6 +66,12 @@ tick
 tick
 ```
 
+## terminal usage
+
+```shell
+node -r epipebomb/register some-script.js | head
+```
+
 ## Notes
 
 Only the `EPIPE` error is captured on `process.stdout` - all other errors are thrown as per usual.
