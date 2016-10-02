@@ -19,7 +19,7 @@ test('node complains when piped to a stream that ends early', function (t) {
   term.write(`node -e "${code}" | head; exit\r`)
 })
 
-test('node complains when piped to a stream that ends early', function (t) {
+test('"node -r epipebomb/register" suppresses EPIPE', function (t) {
   t.plan(2)
   var term = spawn('bash')
   var allData = ''
