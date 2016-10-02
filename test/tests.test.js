@@ -10,7 +10,6 @@ test('node complains when piped to a stream that ends early', function (t) {
   var allData = ''
   term.on('data', function (data) { allData += data })
   term.on('close', function () {
-    process.stdout.write(allData)
     t.true(count(allData, 'tick') >= 10, '"tick" was output at least 10 times')
     if (/EPIPE/g.test(allData)) {
       term.kill()
@@ -26,7 +25,6 @@ test('node complains when piped to a stream that ends early', function (t) {
   var allData = ''
   term.on('data', function (data) { allData += data })
   term.on('close', function () {
-    process.stdout.write(allData)
     t.true(count(allData, 'tick') >= 10, '"tick" was output at least 10 times')
     if (/EPIPE/g.test(allData)) {
       term.kill()
