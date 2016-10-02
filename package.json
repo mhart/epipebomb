@@ -9,10 +9,11 @@
   },
   "main": "epipebomb.js",
   "scripts": {
-    "test": "node test/test"
+    "test": "tape 'test/**/*.test.js'"
   },
   "devDependencies": {
     "pty.js": "^0.3.1",
-    "tape": "^4.6.2"
+    "tape": "^4.6.2",
+    "underscore.string": "^3.3.4"
   }
 }
