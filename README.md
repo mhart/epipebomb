@@ -68,12 +68,16 @@ tick
 
 ## terminal usage
 
+Require `epipebomb/register` from the command line
+
 ```shell
 node -r epipebomb/register some-script.js | head
 ```
 
+or use `epipebomb` as a drop-in replacement for `node`
+
 ```shell
-epipebomb "node some-script.js" | head
+epipebomb some-script.js | head
 ```
 
 ## Notes

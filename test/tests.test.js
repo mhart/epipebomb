@@ -51,7 +51,7 @@ test('cmd epipebomb runs given command', function (t) {
   term.on('close', function () {
     verifyTick(t, allData)
   })
-  term.write(`${epbCmdPath} "node -e \\"${code}\\"" | head; exit\r`)
+  term.write(`${epbCmdPath} -e "${code}" | head; exit\r`)
 })
 
 test('cmd epipebomb suppresses EPIPE', function (t) {
@@ -67,5 +67,5 @@ test('cmd epipebomb suppresses EPIPE', function (t) {
       t.pass('EPIPE error was suppressed')
     }
   })
-  term.write(`${epbCmdPath} "node -e \\"${code}\\"" | head; exit\r`)
+  term.write(`${epbCmdPath} -e "${code}" | head; exit\r`)
 })
