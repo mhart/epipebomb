@@ -66,7 +66,7 @@ tick
 tick
 ```
 
-## terminal usage
+## CLI usage (Node 4.x and up)
 
 Require `epipebomb/register` from the command line
 
